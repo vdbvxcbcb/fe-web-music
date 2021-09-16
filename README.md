@@ -16,7 +16,13 @@
 * [Yarn](https://yarnpkg.com/lang/en/docs/install/)
 * [VSCode](https://code.visualstudio.com/)
 
+## 接口
+
+> https://github.com/Binaryify/NeteaseCloudMusicApi
+
 ## 启动
+
+第一次启动可能较慢，请耐心等待
 
 ```bash
 git clone <git-url>
