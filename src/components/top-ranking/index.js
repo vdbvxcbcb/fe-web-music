@@ -24,13 +24,13 @@ export default memo(function TopRanking(props) {
       <div className="header">
         <div className="image">
           <img src={getSizeImage(info.coverImgUrl)} alt="" />
-          <a href="/todo" className="image_cover">ranking</a>
+          <a title={info.name} href="localhost:3000" className="image_cover">ranking</a>
         </div>
         <div className="info">
-          <a href="/todo">{info.name}</a>
+          <a href="localhost:3000">{info.name}</a>
           <div>
-            <button className="btn play sprite_02"></button>
-            <button className="btn favor sprite_02"></button>
+            <button title="播放" className="btn play sprite_02"></button>
+            <button title="收藏" className="btn favor sprite_02"></button>
           </div>
         </div>
       </div>
@@ -41,12 +41,15 @@ export default memo(function TopRanking(props) {
               <div key={item.id} className="list-item">
                 <div className="rank">{index + 1}</div>
                 <div className="info">
-                  <span className="name text-nowrap">{item.name}</span>
+                  <a href="localhost:3000" 
+                     className="name text-nowrap" 
+                     title={item.name}>
+                    {item.name}
+                  </a>
                   <div className="operate">
-                    <button className="btn sprite_02 play" 
-                            onClick={e => playMusic(item)}></button>
-                    <button className="btn sprite_icon2 addto"></button>
-                    <button className="btn sprite_02 favor"></button>
+                    <button title="播放" className="btn sprite_02 play" onClick={e => playMusic(item)}></button>
+                    <button title="添加到播放列表" className="btn sprite_icon2 addto"></button>
+                    <button title="收藏" className="btn sprite_02 favor"></button>
                   </div>
                 </div>
               </div>
@@ -55,7 +58,7 @@ export default memo(function TopRanking(props) {
         }
       </div>
       <div className="footer">
-        <a href="/todo">查看全部 &gt;</a>
+        <a href="localhost:3000">查看全部 &gt;</a>
       </div>
     </TopRankingWrapper>
   )

@@ -79,16 +79,16 @@ export default memo(function AppPlayerBar() {
     let i = 0;
     for (; i < lyricList.length; i++) {
       let lyricItem = lyricList[i];
-      if (currentTime * 1000 < lyricItem.time) {
-        const content = lyricList[i - 1] && lyricList[i - 1].content;
-        if (content) break;
+      if (currentTime > 0 && currentTime * 1000 < lyricItem.time) {
+        const lyricContent = lyricList[i - 1] && lyricList[i - 1].content;
+        if (lyricContent) break;
       }
     }
 
     if (currentLyricIndex !== i - 1) {
       dispatch(changeCurrentLyricIndexAction(i - 1));
       const content = lyricList[i - 1] && lyricList[i - 1].content;
-      if (content) {
+      if (currentTime > 0 && content) {
         message.open({
           key: "lyric",
           content: content,
