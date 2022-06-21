@@ -30,3 +30,7 @@ yarn install
 yarn start
 ```
 
+
+## 注意
+
+[接口](https://github.com/vdbvxcbcb/fe-web-music/blob/main/src/services/config.js)变化，项目可能无法正常启动
